@@ -21,6 +21,16 @@ public:
 	void operator =(const T& value);
 	void operator =(const T&& value);
 
+	void operator ++();
+
+	void operator +=(const T& value);
+	void operator +=(const T&& value);
+
+	void operator --();
+
+	void operator -=(const T& value);
+	void operator -=(const T&& value);
+
 	operator T();
 };
 

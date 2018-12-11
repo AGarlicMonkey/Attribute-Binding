@@ -10,7 +10,7 @@ inline void Attribute<T>::unbind(T& attribute){
 }
 
 template<typename T>
-inline void Attribute<T>::operator=(const T& value){
+inline void Attribute<T>::operator =(const T& value){
 	cachedValue = value;
 
 	for(T* attribute : boundAttributes){
@@ -21,8 +21,74 @@ inline void Attribute<T>::operator=(const T& value){
 }
 
 template<typename T>
-inline void Attribute<T>::operator=(const T&& value){
+inline void Attribute<T>::operator =(const T&& value){
 	cachedValue = value;
+
+	for(T* attribute : boundAttributes){
+		if(attribute){
+			*attribute = cachedValue;
+		}
+	}
+}
+
+template<typename T>
+inline void Attribute<T>::operator ++(){
+	cachedValue++;
+
+	for(T* attribute : boundAttributes){
+		if(attribute){
+			attribute = cachedValue;
+		}
+	}
+}
+
+template<typename T>
+inline void Attribute<T>::operator +=(const T& value){
+	cachedValue += value;
+
+	for(T* attribute : boundAttributes){
+		if(attribute){
+			attribute = cachedValue;
+		}
+	}
+}
+
+template<typename T>
+inline void Attribute<T>::operator +=(const T&& value){
+	cachedValue += value;
+
+	for(T* attribute : boundAttributes){
+		if(attribute){
+			*attribute = cachedValue;
+		}
+	}
+}
+
+template<typename T>
+inline void Attribute<T>::operator --(){
+	cachedValue--;
+
+	for(T* attribute : boundAttributes){
+		if(attribute){
+			attribute = cachedValue;
+		}
+	}
+}
+
+template<typename T>
+inline void Attribute<T>::operator -=(const T& value){
+	cachedValue -= value;
+
+	for(T* attribute : boundAttributes){
+		if(attribute){
+			attribute = cachedValue;
+		}
+	}
+}
+
+template<typename T>
+inline void Attribute<T>::operator -=(const T&& value){
+	cachedValue -= value;
 
 	for(T* attribute : boundAttributes){
 		if(attribute){
