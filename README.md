@@ -1,5 +1,5 @@
 # Attribute-Binding
-This is a C++ reference counted smart pointer solution.
+This is a C++ attribute binding solution designed for MVVM implementations.
 
 Version 1.0.0
 
@@ -8,10 +8,10 @@ Version 1.0.0
 1. [Attribute](#Att)
 
 ## <a name="Att"></a> Attribute
-An ```Attribute``` is a way to bind multiple variables to a single value
+An ```Attribute``` is a way to bind multiple variables to a single value.
 
 ### Usage
-To use the ```Attribute``` you just use it as you would normaly do with a variable of the same type that ```Attribute``` is templated to
+To use the ```Attribute``` you just use it as you would normaly do with a variable of the same type that ```Attribute``` is templated to.
 ```C++
 Attribute<int> myAttribute;
 myAttribute = 5;
@@ -25,7 +25,7 @@ myAttribute -= 47;
 myAttribute--;
 ```
 
-You can call ```Attribute::bind``` and ```Attribute::unbind``` to bind and unbind variables respectively
+You can call ```Attribute::bind``` and ```Attribute::unbind``` to bind and unbind variables respectively.
 ```C++
 Attribute<int> myAttribute;
 myAttribute = 13;
