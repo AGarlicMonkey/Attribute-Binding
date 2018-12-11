@@ -17,6 +17,12 @@ Attribute<int> myAttribute;
 myAttribute = 5;
 
 int x = myAttribute;
+
+myAttribute += 3;
+myAttribute++;
+
+myAttribute -= 47;
+myAttribute--;
 ```
 
 You can call ```Attribute::bind``` and ```Attribute::unbind``` to bind and unbind variables respectively

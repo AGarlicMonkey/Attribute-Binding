@@ -33,11 +33,11 @@ inline void Attribute<T>::operator =(const T&& value){
 
 template<typename T>
 inline void Attribute<T>::operator ++(){
-	cachedValue++;
+	++cachedValue;
 
 	for(T* attribute : boundAttributes){
 		if(attribute){
-			attribute = cachedValue;
+			*attribute = cachedValue;
 		}
 	}
 }
@@ -48,7 +48,7 @@ inline void Attribute<T>::operator +=(const T& value){
 
 	for(T* attribute : boundAttributes){
 		if(attribute){
-			attribute = cachedValue;
+			*attribute = cachedValue;
 		}
 	}
 }
@@ -66,11 +66,11 @@ inline void Attribute<T>::operator +=(const T&& value){
 
 template<typename T>
 inline void Attribute<T>::operator --(){
-	cachedValue--;
+	--cachedValue;
 
 	for(T* attribute : boundAttributes){
 		if(attribute){
-			attribute = cachedValue;
+			*attribute = cachedValue;
 		}
 	}
 }
@@ -81,7 +81,7 @@ inline void Attribute<T>::operator -=(const T& value){
 
 	for(T* attribute : boundAttributes){
 		if(attribute){
-			attribute = cachedValue;
+			*attribute = cachedValue;
 		}
 	}
 }
