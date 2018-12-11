@@ -1,19 +1,28 @@
 #include <list>
 
 /////////ATTRIBUTE
-template <typename T> class Attribute{
+template <typename T> 
+class Attribute{
 	
 	//VARIABLES
 private:
-	list<T*> boundAttributes;
+	std::list<T*> boundAttributes;
+
+	T cachedValue;
 
 	//FUNCTIONS
 public:
-	void bind(T* attribute);
-	void unBind(T* attribute)
+	Attribute() = default;
+	~Attribute() = default;
 
-	void operator=(T value);
-}
+	void bind(T& attribute);
+	void unBind(T& attribute);
+
+	void operator =(const T& value);
+	void operator =(const T&& value);
+
+	operator T();
+};
 
 /////////INLINE INCLUDE
 #include "Attribute.inl"
