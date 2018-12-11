@@ -1,6 +1,6 @@
 template<typename T>
 inline void Attribute<T>::bind(T& attribute){
-	boundAttributes.emplace(&attribute);
+	boundAttributes.push_back(&attribute);
 	attribute = cachedValue;
 }
 
