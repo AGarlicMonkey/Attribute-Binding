@@ -5,7 +5,7 @@ inline void Attribute<T>::bind(T& attribute){
 }
 
 template<typename T>
-inline void Attribute<T>::unBind(T& attribute){
+inline void Attribute<T>::unbind(T& attribute){
 	boundAttributes.remove(&attribute);
 }
 

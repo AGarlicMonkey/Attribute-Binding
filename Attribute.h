@@ -16,7 +16,7 @@ public:
 	~Attribute() = default;
 
 	void bind(T& attribute);
-	void unBind(T& attribute);
+	void unbind(T& attribute);
 
 	void operator =(const T& value);
 	void operator =(const T&& value);
