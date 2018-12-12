@@ -31,12 +31,17 @@ Attribute<int> myAttribute;
 myAttribute = 13;
 
 int x = 0;
+int y = 0;
+int z = 0;
 
 myAttribute.bind(x); //x has now also been set to 13
 
 myAttribute = 14; //all bound variables are now 14
 
-myAttribute.unbind(x); //x removed
+myAttribute.bind(y); //y has now also been set to 14
+myAttribute.bind(z); //z has now also been set to 14
 
-myAttribute = 24; //x is still 14
+myAttribute = 58; //all bound variables are now 58
+
+myAttribute.unbind(x); //x removed
 ```
