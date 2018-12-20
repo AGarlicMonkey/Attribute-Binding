@@ -1,38 +1,40 @@
 #include <list>
 
-/////////ATTRIBUTE
-template <typename T> 
-class Attribute{
-	
-	//VARIABLES
-private:
-	std::list<T*> boundAttributes;
+namespace agm{
+	/////////ATTRIBUTE
+	template <typename T>
+	class Attribute{
 
-	T cachedValue;
+		//VARIABLES
+	private:
+		std::list<T*> boundAttributes;
 
-	//FUNCTIONS
-public:
-	Attribute() = default;
-	~Attribute() = default;
+		T cachedValue;
 
-	void bind(T& attribute);
-	void unbind(T& attribute);
+		//FUNCTIONS
+	public:
+		Attribute() = default;
+		~Attribute() = default;
 
-	void operator =(const T& value);
-	void operator =(const T&& value);
+		void bind(T& attribute);
+		void unbind(T& attribute);
 
-	void operator ++();
+		void operator =(const T& value);
+		void operator =(const T&& value);
 
-	void operator +=(const T& value);
-	void operator +=(const T&& value);
+		void operator ++();
 
-	void operator --();
+		void operator +=(const T& value);
+		void operator +=(const T&& value);
 
-	void operator -=(const T& value);
-	void operator -=(const T&& value);
+		void operator --();
 
-	operator T();
-};
+		void operator -=(const T& value);
+		void operator -=(const T&& value);
+
+		operator T();
+	};
+}
 
 /////////INLINE INCLUDE
 #include "Attribute.inl"

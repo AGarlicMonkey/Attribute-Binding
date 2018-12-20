@@ -1,16 +1,16 @@
 template<typename T>
-inline void Attribute<T>::bind(T& attribute){
+inline void agm::Attribute<T>::bind(T& attribute){
 	boundAttributes.push_back(&attribute);
 	attribute = cachedValue;
 }
 
 template<typename T>
-inline void Attribute<T>::unbind(T& attribute){
+inline void agm::Attribute<T>::unbind(T& attribute){
 	boundAttributes.remove(&attribute);
 }
 
 template<typename T>
-inline void Attribute<T>::operator =(const T& value){
+inline void agm::Attribute<T>::operator =(const T& value){
 	cachedValue = value;
 
 	for(T* attribute : boundAttributes){
@@ -21,7 +21,7 @@ inline void Attribute<T>::operator =(const T& value){
 }
 
 template<typename T>
-inline void Attribute<T>::operator =(const T&& value){
+inline void agm::Attribute<T>::operator =(const T&& value){
 	cachedValue = value;
 
 	for(T* attribute : boundAttributes){
@@ -32,7 +32,7 @@ inline void Attribute<T>::operator =(const T&& value){
 }
 
 template<typename T>
-inline void Attribute<T>::operator ++(){
+inline void agm::Attribute<T>::operator ++(){
 	++cachedValue;
 
 	for(T* attribute : boundAttributes){
@@ -43,7 +43,7 @@ inline void Attribute<T>::operator ++(){
 }
 
 template<typename T>
-inline void Attribute<T>::operator +=(const T& value){
+inline void agm::Attribute<T>::operator +=(const T& value){
 	cachedValue += value;
 
 	for(T* attribute : boundAttributes){
@@ -54,7 +54,7 @@ inline void Attribute<T>::operator +=(const T& value){
 }
 
 template<typename T>
-inline void Attribute<T>::operator +=(const T&& value){
+inline void agm::Attribute<T>::operator +=(const T&& value){
 	cachedValue += value;
 
 	for(T* attribute : boundAttributes){
@@ -65,7 +65,7 @@ inline void Attribute<T>::operator +=(const T&& value){
 }
 
 template<typename T>
-inline void Attribute<T>::operator --(){
+inline void agm::Attribute<T>::operator --(){
 	--cachedValue;
 
 	for(T* attribute : boundAttributes){
@@ -76,7 +76,7 @@ inline void Attribute<T>::operator --(){
 }
 
 template<typename T>
-inline void Attribute<T>::operator -=(const T& value){
+inline void agm::Attribute<T>::operator -=(const T& value){
 	cachedValue -= value;
 
 	for(T* attribute : boundAttributes){
@@ -87,7 +87,7 @@ inline void Attribute<T>::operator -=(const T& value){
 }
 
 template<typename T>
-inline void Attribute<T>::operator -=(const T&& value){
+inline void agm::Attribute<T>::operator -=(const T&& value){
 	cachedValue -= value;
 
 	for(T* attribute : boundAttributes){
@@ -98,6 +98,6 @@ inline void Attribute<T>::operator -=(const T&& value){
 }
 
 template<typename T>
-inline Attribute<T>::operator T(){
+inline agm::Attribute<T>::operator T(){
 	return cachedValue;
 }
