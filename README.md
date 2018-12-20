@@ -1,7 +1,7 @@
 # Attribute-Binding
 This is a C++ attribute binding solution designed for MVVM implementations.
 
-Version 1.0.0
+Version 1.0.1
 
 #
 
@@ -13,7 +13,7 @@ An ```Attribute``` is a way to bind multiple variables to a single value.
 ### Usage
 To use the ```Attribute``` you just use it as you would normaly do with a variable of the same type that ```Attribute``` is templated to.
 ```C++
-Attribute<int> myAttribute;
+agm::Attribute<int> myAttribute;
 myAttribute = 5;
 
 int x = myAttribute;
@@ -27,7 +27,7 @@ myAttribute--;
 
 You can call ```Attribute::bind``` and ```Attribute::unbind``` to bind and unbind variables respectively.
 ```C++
-Attribute<int> myAttribute;
+agm::Attribute<int> myAttribute;
 myAttribute = 13;
 
 int x = 0;
